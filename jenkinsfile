@@ -1,0 +1,36 @@
+pipeline{
+
+    agent {any}
+
+    tools {
+           
+	  maven 'Maven'
+
+          java 'Java'
+
+	}
+
+         stage('chekoutstage')
+      {
+         steps
+         {
+            
+            checkout scm
+         }
+      }
+
+	stage('Build')
+      {
+         steps
+         {
+            sh "mvn clean package"
+         }
+      }
+
+	stage{'deploy'}
+	{
+	
+	steps
+	{
+	  
+	sh "scp /var/lib/jenkins/workspace/jenkinsfile/     	
