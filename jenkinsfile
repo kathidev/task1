@@ -1,6 +1,7 @@
-pipeline{
+pipeline
+{
 
-    agent {any}
+    agent any
 
     tools {
            
@@ -9,6 +10,8 @@ pipeline{
           java 'Java'
 
 	}
+    stages
+	{
 
          stage('chekoutstage')
       {
@@ -18,19 +21,12 @@ pipeline{
             checkout scm
          }
       }
-
-	stage('Build')
+       stage('ContinuousBuild') 
       {
-         steps
-         {
-            sh "mvn clean package"
-         }
-      }
-
-	stage{'deploy'}
-	{
-	
-	steps
-	{
-	  
-	sh "scp /var/lib/jenkins/workspace/jenkinsfile/     	
+       steps
+       {
+        sh 'mvn package'
+      } 
+    }
+ }	
+}
