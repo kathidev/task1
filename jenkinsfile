@@ -28,5 +28,13 @@ pipeline
         sh 'mvn package'
       } 
     }
- }	
+    stage{"deploy"}
+    {
+    steps
+    {
+    sh 'scp /var/lib/jenkins/workspace/test/single-module/target/single-module-project.jar ec2-user@3.17.208.15:/usr/local/tomcat/webapps/qa.jar
+    
+     }	
+   }
+ }
 }
