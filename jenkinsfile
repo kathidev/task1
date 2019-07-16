@@ -5,9 +5,9 @@ pipeline
 
     tools {
            
-	  maven 'maven'
+	  maven 'MAVEN_HOME'
 
-          java 'java'
+          jdk 'JAVA_HOME'
 
 	}
     stages
