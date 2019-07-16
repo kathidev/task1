@@ -32,7 +32,7 @@ pipeline
     {
     steps
     {
-    sh 'sudo scp /var/lib/jenkins/workspace/test/single-module/target/single-module-project.jar ec2-user@172.31.42.132:/usr/local/tomcat/webapps/qa.jar -o StrictHostKeyChecking=no'
+    sh 'sudo scp  -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/test/single-module/target/single-module-project.jar ec2-user@172.31.42.132:/usr/local/tomcat/webapps/qa.jar'
     
      }	
    }
