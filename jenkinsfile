@@ -33,9 +33,10 @@ pipeline
     steps
     {
     sshagent(['ssh-cred']) {
-    sh 'sudo scp  -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/jar/single-module/target/single-module-project.jar ec2-user@172.31.42.132:/usr/local/tomcat/webapps/qa.jar'
+    sh 'sudo scp  -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/jar/single-module/target/single-module-project.jar ec2-user@172.31.40.79:/usr/local/tomcat/webapps/qa.jar'
     }
      }	
+
    }
  }
 }
